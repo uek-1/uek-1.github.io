@@ -14,13 +14,13 @@
         <a href="{base}/"><img src="avatar.jpg" alt="avatar" class="avatar" /></a>
       </li>
       <li><a href="{base}/"><big>Vivek Kethineni</big></a></li>
-      <li><a href="{base}/projects">Projects</a></li>
-      <li><a href="{base}/blog">Blog</a></li>
+      <li><a href="./projects">Projects</a></li>
+      <li><a href="./blog">Blog</a></li>
     </ul>
     <ul>
       <li>
         <a href="https://github.com/uek-1/"
-          ><img src="{base}/github_icon.png" alt="avatar" class="nav-icon" /></a
+          ><img src="github_icon.png" alt="avatar" class="nav-icon" /></a
         >
       </li>
     </ul>
@@ -39,7 +39,7 @@
         >
       </li>
       <li><a href="mailto:vickey2183@gmail.com">email</a></li>
-      <li><a href="{base}/resume.pdf">resume</a></li>
+      <li><a href="resume.pdf">resume</a></li>
     </ul>
   </nav>
 </footer>
