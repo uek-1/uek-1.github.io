@@ -1,15 +1,17 @@
 <script>
+  import { browser } from "$app/environment";
   export let data;
   $: console.log(data.projects);
-  // data = {
-  //   projects: [{
-  //     name: '1',
-  //     date: '2',
-  //     description: '3',
-  //     link: null,
-  //   }]
-  // }
 </script>
+
+<svelte:head>
+  <script
+    src="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.min.js"
+  >
+  </script>
+
+  <!-- Optionally, include the theme (if you don't want to struggle to write the CSS) -->
+</svelte:head>
 
 <title>Projects</title>
 
@@ -17,11 +19,14 @@
   <article id="name">
     <center>
       <h2>Projects</h2>
+      <img src="https://ghchart.rshah.org/uek-1" />
+      <br />
+      <small><i>My GitHub contributions</i></small>
     </center>
   </article>
 
   {#each data.projects as project}
-    <article>
+    <article id={project.name}>
       <header>
         <b>{project.name}</b>
         <br />
@@ -30,7 +35,7 @@
 
       <body>
         {#each project.description as paragraph}
-          <p>{paragraph}</p>
+          {@html paragraph}
         {/each}
       </body>
       <footer>

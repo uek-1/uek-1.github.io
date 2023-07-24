@@ -7,7 +7,13 @@
 <main class="container">
   <article id="name">
     <center>
-      <h2>Vivek Kethineni</h2>
+      <figure>
+        <figcaption class="title">Vivek Kethineni</figcaption>
+        <img src="group_picture.jpg" alt="group picture" class="main" />
+        <figcaption class="sub">
+          Moving out of the freshman dorms (2023)
+        </figcaption>
+      </figure>
     </center>
   </article>
 
@@ -20,7 +26,40 @@
     </body>
   </article>
 
-  <article id="technology">
+  <article id="interests">
+    <h2>Tech-related Interests</h2>
+    <body>
+      <ol class="bold-items">
+        <li>Articial Intelligence</li>
+        <p>
+          Specifically, I'm interested in research related to running large
+          models on devices that are not powerful. For example, running a
+          language language model on a local server using a rasberry pi or a
+          used laptop. I think research in reducing the memory required to load
+          large models and speed up inference time will prove to be very useful
+          in making current artificial intellgience based products popular with
+          consumers.
+        </p>
+        <li>Compression</li>
+        <p>
+          Recently, I've been very interested in compression algorithms. I find
+          them very interesting because of how effective they can be. I
+          implemented a few image compression methods in my project, <a
+            href="./projects#pngpeg">pngpeg</a
+          >
+        </p>
+        <li>Functional Programming</li>
+        <p>
+          I've been experimented with Haskell because I wanted to know how
+          coding in functional languages feel. It's been a very interesting
+          experience and has made me reconsider the way I think about certain
+          problems.
+        </p>
+      </ol>
+    </body>
+  </article>
+
+  <article id="defaults">
     <h2>Defaults</h2>
     <body>
       <ul>
@@ -33,7 +72,28 @@
 </main>
 
 <style>
-  img {
+  img.rounded {
     border-radius: 50%;
+  }
+
+  img.main {
+    border-radius: 10%;
+    max-width: 300px;
+    max-height: 500px;
+  }
+
+  figcaption.sub {
+    font-size: small;
+    font-style: italic;
+  }
+
+  figcaption.title {
+    font-size: xx-large;
+    color: black;
+    font-weight: bold;
+  }
+
+  ol.bold-items li {
+    font-weight: bold;
   }
 </style>

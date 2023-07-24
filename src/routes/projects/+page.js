@@ -46,7 +46,7 @@ function parse_html(mdhtml){
   const content_regex = /<p(?:\s+[^>]*)*>(.*?)<\/p>/g;
   const content = [];
   while ((match = content_regex.exec(mdhtml)) != null) {
-    content.push(match[1]);
+    content.push(match[0]);
   }
 
   const link_regex = /<a\s+[^>]*?href=(?:"([^"]+)"|'([^']+)')/g
