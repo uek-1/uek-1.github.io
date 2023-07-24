@@ -1,7 +1,8 @@
 import { marked } from 'marked';
+import { base } from "$app/paths";
 
 export async function load({ fetch, params }){
-  const raw = import.meta.glob("/src/routes/projects/project_files/*.md");
+  const raw = import.meta.glob("./project_files/*.md");
 
   console.log(raw);
 
@@ -10,7 +11,7 @@ export async function load({ fetch, params }){
   for (const path in raw) {
     raw[path]().then(async (mod) => {
       console.log(`${path}`);
-      const mdfile = await fetch(`${path}`).then(res => res.arrayBuffer());
+      const mdfile = await fetch(`${base}/${path}`).then(res => res.arrayBuffer());
       var enc = new TextDecoder("utf-8");
       const mdstr = enc.decode(mdfile);
       const mdhtml = marked.parse(mdstr);

@@ -14,8 +14,8 @@
         <a href="{base}/"><img src="avatar.jpg" alt="avatar" class="avatar" /></a>
       </li>
       <li><a href="{base}/"><big>Vivek Kethineni</big></a></li>
-      <li><a href="./projects">Projects</a></li>
-      <li><a href="./blog">Blog</a></li>
+      <li><a href="{base}/projects">Projects</a></li>
+      <li><a href="{base}/blog">Blog</a></li>
     </ul>
     <ul>
       <li>
