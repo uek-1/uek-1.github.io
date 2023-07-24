@@ -1,3 +1,16 @@
+<script>
+  export let data;
+  $: console.log(data.projects);
+  // data = {
+  //   projects: [{
+  //     name: '1',
+  //     date: '2',
+  //     description: '3',
+  //     link: null,
+  //   }]
+  // }
+</script>
+
 <title>Projects</title>
 
 <main class="container">
@@ -7,31 +20,22 @@
     </center>
   </article>
 
-  <article id="about">
-    <header>
-      <b>puffpastry</b>
-      <br />
-      <small>Summer 2023</small>
-    </header>
+  {#each data.projects as project}
+    <article>
+      <header>
+        <b>{project.name}</b>
+        <br />
+        <small>{project.date}</small>
+      </header>
 
-    <body>
-      <p>
-        puffpastry is a machine learning framework that I wrote from scratch in
-        pure rust using as few crates as I could. It mimics the style of the
-        popular python library keras.
-      </p>
-      <p>
-        My motivation for creating this project was simply to explore Rust's
-        trait system and make my knowledge about machine learning more concrete.
-        By doing so, I encountered many issues that I otherwise would never have
-        thought about: preventing values from exploding by using effective
-        weight initialization, handling N-dimensional structures in a static
-        langauge, writing a backpropogation algorithm that works with multiple
-        types of layers, and more like these.
-      </p>
-    </body>
-    <footer>
-      <a href="https://github.com/uek-1/puffpastry">GitHub Link</a>
-    </footer>
-  </article>
+      <body>
+        {#each project.description as paragraph}
+          <p>{paragraph}</p>
+        {/each}
+      </body>
+      <footer>
+        <a href={project.link}>GitHub Link</a>
+      </footer>
+    </article>
+  {/each}
 </main>
