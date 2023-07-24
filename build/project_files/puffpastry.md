@@ -9,5 +9,9 @@ By doing so, I encountered many issues that I otherwise would never have thought
 initialization, handling N-dimensional structures in a static langauge, writing a backpropogation algorithm that works
 with multiple types of layers, and more like these.
 
+Example code to create a model that can learn the XOR gate:
+
+![Example Code](project_files/puffpastry_code.png)
+
 
 ### [Link](https://github.com/uek-1/puffpastry)
