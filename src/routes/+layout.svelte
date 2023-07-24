@@ -61,5 +61,17 @@
     position: fixed;
     left: 0;
     bottom: 0;
+    display:block;
+    background-color: var(--background-color);
+  }
+
+  @media (max-width: 600px) {
+    img.avatar {
+      display: none;
+    }
+
+    img.nav-icon {
+      display: none;
+    }
   }
 </style>
