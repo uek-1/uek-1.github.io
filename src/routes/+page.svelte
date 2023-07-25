@@ -9,7 +9,7 @@
     <center>
       <figure>
         <figcaption class="title">Vivek Kethineni</figcaption>
-        <img src="group_picture.jpg" alt="group picture" class="main" />
+        <img src="{base}/group_picture.jpg" alt="group picture" class="main" />
         <figcaption class="sub">
           Moving out of the freshman dorms (2023)
         </figcaption>
@@ -89,7 +89,7 @@
 
   figcaption.title {
     font-size: xx-large;
-    color: black;
+    color: var(--primary);
     font-weight: bold;
   }
 

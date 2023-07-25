@@ -1,3 +1,4 @@
+export const ssr = false;
 import { marked } from 'marked';
 import { base } from "$app/paths";
 
@@ -7,7 +8,7 @@ marked.use({
 });
 
 export function load({ fetch, params }){
-  const raw = import.meta.glob("/static/project_files/*.md");
+  const raw = import.meta.glob("/static/blog_files/*.md");
 
   const posts = [];
   
@@ -19,7 +20,7 @@ export function load({ fetch, params }){
         var enc = new TextDecoder("utf-8");
         const mdstr = enc.decode(mdfile);
         const mdhtml = marked.parse(mdstr);
-        const post = parse_html(mdhtml);
+        const post = parse_html(mdhtml, new_path);
         return post;
       })
     ))
@@ -27,14 +28,16 @@ export function load({ fetch, params }){
 
 
   return {
-    projects: Promise.all(posts).then((values) => values)
+    posts: Promise.all(posts).then((values) => values)
   }
 }
 
 
 
-function parse_html(mdhtml){
+function parse_html(mdhtml, file_path){
   mdhtml = mdhtml.replace(/\s+/g, ' ').trim()
+  file_path = file_path.replace('.md', '');
+  file_path = file_path.replace('./blog_files/', '');
 
   const title_regex = /<h1(?:\s+[^>]*)*>(.*?)<\/h1>/g;
   var title = null;
@@ -55,17 +58,23 @@ function parse_html(mdhtml){
   while ((match = content_regex.exec(mdhtml)) != null) {
     content.push(match[0]);
   }
-
-  const link_regex = /<a\s+[^>]*?href=(?:"([^"]+)"|'([^']+)')/g
-  var link = null
-  while ((match = link_regex.exec(mdhtml)) != null) {
-    link = match[1];
+ 
+  const tags_regex = /<h3(?:\s+[^>]*)*>(.*?)<\/h3>/g;
+  var tags = null;
+  while((match = tags_regex.exec(mdhtml)) != null) {
+    tags = match[1];
   }
 
+  if (tags !== null) {
+    tags = tags.trim().split(',');
+  }
+
+
   return {
-    name: title,
+    file_path: file_path, 
+    title: title,
     date: date,
-    description: content,
-    link: link
+    content: content,
+    tags: tags,
   }
 }
