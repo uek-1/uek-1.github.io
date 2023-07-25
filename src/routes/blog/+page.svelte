@@ -16,7 +16,7 @@
   {#each data.posts as post}
     <article id={post.title}>
       <header>
-        <b><a href="./blog/{post.file_path}/">{post.title}</a></b>
+        <b><a href="./blog/{post.file_path}">{post.title}</a></b>
         <br />
         <small>{post.date}</small>
       </header>

@@ -1,25 +1,25 @@
 <script>
-  import "../pico.css";
   import { base } from "$app/paths";
 </script>
 
 <head>
   <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
 </head>
 
 <header class="container-fluid">
   <nav>
     <ul>
       <li>
-        <a href="{base}/"><img src="{base}/avatar.jpg" alt="avatar" class="avatar" /></a>
+        <a href="{base}"><img src="{base}/avatar.jpg" alt="avatar" class="avatar" /></a>
       </li>
-      <li><a href="{base}/"><big>Vivek Kethineni</big></a></li>
-      <li><a href="{base}/projects/">Projects</a></li>
-      <li><a href="{base}/blog/">Blog</a></li>
+      <li><a href="{base}"><big>Vivek Kethineni</big></a></li>
+      <li><a href="{base}/projects">Projects</a></li>
+      <li><a href="{base}/blog">Blog</a></li>
     </ul>
     <ul>
       <li>
-        <a href="https://github.com/uek-1/"
+        <a href="https://github.com/uek-1"
           ><img src="{base}/github_icon.png" alt="avatar" class="nav-icon" /></a
         >
       </li>

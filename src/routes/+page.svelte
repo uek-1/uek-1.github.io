@@ -45,7 +45,7 @@
           Recently, I've been very interested in compression algorithms. I find
           them very interesting because of how effective they can be. I
           implemented a few image compression methods in my project, <a
-            href="./projects#pngpeg">pngpeg</a
+            href="{base}/projects/#pngpeg">pngpeg</a
           >
         </p>
         <li>Functional Programming</li>

@@ -17,7 +17,7 @@ const config = {
       base: dev ? '' : "/uek-1.github.io",
     },
     prerender: {
-      entries: ['/blog/1', '/blog/', '/projects/', '/']
+      entries: ['*', '/blog/1']
     }
   }
 };
