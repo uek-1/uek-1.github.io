@@ -11,9 +11,9 @@
   <nav>
     <ul>
       <li>
-        <a href="{base}"><img src="{base}/avatar.jpg" alt="avatar" class="avatar" /></a>
+        <a href="{base}/"><img src="{base}/avatar.jpg" alt="avatar" class="avatar" /></a>
       </li>
-      <li><a href="{base}"><big>Vivek Kethineni</big></a></li>
+      <li><a href="{base}/"><big>Vivek Kethineni</big></a></li>
       <li><a href="{base}/projects">Projects</a></li>
       <li><a href="{base}/blog">Blog</a></li>
     </ul>
